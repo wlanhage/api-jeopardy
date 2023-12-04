@@ -5,7 +5,7 @@ let questionsAndAnswers = {}; //någonstans att lägga frågor och svar
 document.getElementById('loadCats').addEventListener('click', function(event) { //knapp för att ladda kategorier
   
   if (allCategories.length === 0) { //om det inte finns kategorier, fetcha
-    fetch('http://jservice.io/api/categories?count=100') // Hämta 100 kategorier
+    fetch('https://jservice.io/api/categories?count=100') // Hämta 100 kategorier
       .then(response => response.json()) //gör json
       .then(categories => {
         allCategories = categories;
