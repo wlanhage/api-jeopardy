@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Kanit:wght@100;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: Agbalumo;
+    font-size: 50px;
+
+}
+
+h2 {
+    font-family: Agbalumo;;
+    font-size: 35px;
+}
+
+h3 {
+    font-family: kanit;
+    font-size: 25px;
+}
+
+p {
+    font-family: Kanit;
+    font-size: 18px;
+}
+
+
+
+body {
+    background-color: blue;
+    font-family: Kanit;
+    font-size: 18px;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-bottom: 50px;
+    margin-top: 35px;
+
+}
+
+.categoryTitle {
+    font-size: 20px;
+    font-weight: bold;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: yellow;
+
+    max-width: 150px;
+    
+}
+
+.categoryTitle p {
+    border: 2px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#loadCats {
+    margin-top: 50px;
+
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: darkblue;
+    font-family: kanit;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.box {
+    flex: 1 1 auto;
+    height: 100px;
+    width: 180px; 
+    background-color: #007bff; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid #b7be00; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+}
+
+.box:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3);
+}
+
+.box:active {
+    background-color: #004080;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.box.clicked {
+    background-color: #808080;
+    color: white; 
+    pointer-events: none; 
+}
+
+
+/*  -------- MODAL -------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    
+    z-index: 1000;
+    padding-top: 100px;
+    left: 100px;
+    top: 50px;
+    width: 85vw;
+    height: 85vh;
+    overflow: auto;
+    border-radius: 35px;
+
+    background-color: rgba(3, 0, 181, 0.92);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+
+    margin-top: -125px;
+}
+
+.close {
+    padding: 10px 15px;
+    background-color: #a72828; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+
+    position: absolute;
+    top:20px;
+}
+
+.close:hover {
+    background-color: #882121; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close:active {
+    background-color: #7e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+    
+
+
+    
+
+
+.question {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    font-size: 35px;
+    color: black;
+    margin-top: 80px;
+}
+
+.answer {
+    display: none;
+    font-size: 35px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.answerShow {
+    display: block;
+}
+
+#answerButton {
+    padding: 10px 15px;
+    background-color: #28a745; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+#answerButton:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#answerButton:active {
+    background-color: #1e7e34; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* -------- SCOREBOARD  ------- */
+
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    margin-top: 75px;
+}
+
+.pointsTitle {
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: yellow;
+}
+
+
+.scoreContainer {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 100px;
+}
+
+.point-holder {
+    text-align: center;
+}
+
+.score {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* -- BUTTONS -- */
+
+
+.add, .subtract {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+
+.add {
+    background-color: #4CAF50; 
+}
+
+.add:hover {
+    background-color: #45a049; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+.subtract {
+    background-color: #f44336; 
+}
+
+.subtract:hover {
+    background-color: #da190b; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
