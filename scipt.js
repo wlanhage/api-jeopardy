@@ -27,7 +27,7 @@ function loadRandomCategories() {
   selectedCategories.forEach((category, index) => { // loopa igenom kategorierna och ge dem ett id
     document.querySelectorAll('.categoryTitle')[index].textContent = category.title;
 
-    fetch(`http://jservice.io/api/category?id=${category.id}`) // hämta frågor från korrekt kategori-id
+    fetch(`https://jservice.io/api/category?id=${category.id}`) // hämta frågor från korrekt kategori-id
       .then(response => response.json())
       .then(categoryData => {
         categoryData.clues.forEach(clue => {
